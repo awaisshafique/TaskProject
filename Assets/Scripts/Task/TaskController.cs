@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TaskController : MonoBehaviour
@@ -62,5 +63,15 @@ public class TaskController : MonoBehaviour
 
     }
 
+
+
+    bool CheckIfGameObjectContainsNo(GameObject obj)
+    {
+        var name = obj.name;
+
+        bool isIntString = name.All(char.IsDigit);
+
+        return isIntString;
+    }
 
 }
