@@ -65,11 +65,11 @@ public class TaskController : MonoBehaviour
 
 
 
-    bool CheckIfGameObjectContainsNo(GameObject obj)
+    public bool CheckIfGameObjectContainsNo(GameObject obj)
     {
         var name = obj.name;
 
-        bool isIntString = name.All(char.IsDigit);
+        bool isIntString = name.Any(char.IsNumber);
 
         return isIntString;
     }

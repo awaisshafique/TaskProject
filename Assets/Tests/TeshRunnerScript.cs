@@ -20,8 +20,28 @@ namespace Tests
         [UnityTest]
         public IEnumerator TeshRunnerScriptWithEnumeratorPasses()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
+
+           UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+
+            yield return new WaitForSeconds(2f);
+
+
+            var task = GameObject.FindObjectOfType<TaskController>();
+
+            var g1 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            g1.name = "Task_3";
+
+            Debug.Log(task.CheckIfGameObjectContainsNo(g1));
+
+
+            var g2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            g2.name = "Task";
+
+            Debug.Log(task.CheckIfGameObjectContainsNo(g2));
+
+
+
+
             yield return null;
         }
     }
