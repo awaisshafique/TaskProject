@@ -18,7 +18,7 @@ public class TaskController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            SpawnObject(pointA, pointB);
+            SpawnAtPointA();
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -29,6 +29,17 @@ public class TaskController : MonoBehaviour
 
     }
 
+
+    public void SpawnAtPointA()
+    {
+        SpawnObject(pointA, pointB);
+    }
+
+    public void SpawnAtPointB()
+    {
+        SpawnObject(pointB, pointA);
+
+    }
 
     void SpawnObject(GameObject point , GameObject target)
     {
